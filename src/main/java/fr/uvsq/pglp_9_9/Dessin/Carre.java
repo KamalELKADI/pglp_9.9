@@ -24,9 +24,7 @@ public class Carre extends Forme{
         this.setLongueur(longueurCarre);
     }
 
-    /**
-     * affiche un carré.
-     */
+    //Afficher le carre
     public void affiche() {
         super.affiche();
         System.out.println("Carre (longueur = "
