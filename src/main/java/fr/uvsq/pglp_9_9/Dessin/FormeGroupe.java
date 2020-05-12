@@ -20,6 +20,15 @@ public class FormeGroupe extends Forme{
 		}
 		
 	}
+	
+	@Override
+	public void affiche() {
+		// TODO Auto-generated method stub
+		super.affiche();
+	}
+	
+	
+	
 
 	
 	
