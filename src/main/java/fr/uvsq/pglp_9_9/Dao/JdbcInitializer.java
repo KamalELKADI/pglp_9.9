@@ -62,6 +62,7 @@ public class JdbcInitializer {
         
     }
 	
+	//créer la table Forme
 	private static void CreateForme(final Connection connect){
 		String table = "create table Forme ("
                 + "variableName varchar(30) primary key"
