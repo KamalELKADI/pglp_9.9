@@ -1,12 +1,18 @@
 package fr.uvsq.pglp_9_9.Dao;
 
-public abstract class AbstractFactoryDao<T> {
+import fr.uvsq.pglp_9_9.Dessin.Carre;
+import fr.uvsq.pglp_9_9.Dessin.Cercle;
+import fr.uvsq.pglp_9_9.Dessin.FormeGroupe;
+import fr.uvsq.pglp_9_9.Dessin.Rectangle;
+import fr.uvsq.pglp_9_9.Dessin.Triangle;
 
-	public abstract T create(T object);
+public interface  AbstractFactoryDao<T> {
+
+	  DAO<Carre> createCarreDao();
+	  DAO<Triangle> createTriangleDao();
+	  DAO<Rectangle> createRectangleDao();
+	  DAO<Cercle> createCercleDao();
+	  DAO<FormeGroupe> createGroupeDao();
  
-    public abstract T find(String id);
-    
-    public abstract T update(T object);
-    
-    public abstract void delete(T object);
+  
 }
