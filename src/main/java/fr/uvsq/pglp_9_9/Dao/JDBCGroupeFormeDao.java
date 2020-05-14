@@ -4,11 +4,11 @@ import java.sql.Connection;
 
 import fr.uvsq.pglp_9_9.Dessin.FormeGroupe;
 
-public class JDBCGroupeFormeDao implements Dao<FormeGroupe>{
+public class JdbcGroupeFormeDao implements Dao<FormeGroupe>{
 
 	private final Connection connect;
 	
-	public JDBCGroupeFormeDao(final Connection c) {
+	public JdbcGroupeFormeDao(final Connection c) {
         connect = c;
     }
 	@Override
