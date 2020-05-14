@@ -6,9 +6,9 @@ import fr.uvsq.pglp_9_9.Dessin.FormeGroupe;
 
 public class JdbcGroupeFormeDao implements Dao<FormeGroupe>{
 
-	private final Connection connect;
+	private  Connection connect;
 	
-	public JdbcGroupeFormeDao(final Connection c) {
+	public JdbcGroupeFormeDao(Connection c) {
         connect = c;
     }
 	@Override

@@ -1,9 +1,17 @@
 package fr.uvsq.pglp_9_9.Dao;
 
+import java.sql.Connection;
+
 import fr.uvsq.pglp_9_9.Dessin.Carre;
 
 public class JdbcCarreDao implements Dao<Carre>{
 
+    private  Connection connect;
+	
+	public JdbcCarreDao(Connection c) {
+        connect = c;
+    }
+	
 	@Override
 	public Carre create(Carre object) {
 		// TODO Auto-generated method stub
