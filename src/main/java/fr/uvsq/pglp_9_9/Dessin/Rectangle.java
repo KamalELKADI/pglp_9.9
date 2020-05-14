@@ -5,10 +5,16 @@ public class Rectangle extends Forme{
 	private Point topLeft;
 	private int longueur;
 	private int largeur;
-	public Rectangle(String nomVar) {
-		super(nomVar);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	 public Rectangle(String nomVar, Point topLeftPosition,int longueurRectangle, int largeurRectangle)
+	            throws Exception {
+	        super(nomVar);
+	        this.topLeft = topLeftPosition.clone();
+	        this.setLargeur(largeurRectangle);
+	        this.setLongueur(longueurRectangle);
+	    }
+	
 
 	@Override
 	public void deplace(int x, int y) {

@@ -7,12 +7,16 @@ public class Cercle extends Forme{
 	
 	
 	
-	public Cercle(String nomVar,Point p,
-            final int rayonCercle) throws Exception {
+	public Cercle(String nomVar,Point p,int rayonCercle){
 		
         super(nomVar);
-        //centre = p.clone();
+        try {
+			 centre = p.clone();
         this.setRayon(rayonCercle);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+       
     }
 
 	
