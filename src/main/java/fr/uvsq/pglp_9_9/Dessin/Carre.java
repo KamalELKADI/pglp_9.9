@@ -8,17 +8,17 @@ public class Carre extends Forme{
     //longeur des cotes du Carre
     private int longueur;
    
-    public Carre(String nomVar,
-            int longueurCarre) throws Exception {
-        super(nomVar);
-       
-        this.setLongueur(longueurCarre);
-    }
     
-    public Carre(String nomVariable, Point topLeftPosition,int longueurCarre) throws Exception {
+    
+    public Carre(String nomVariable, Point topLeftPosition,int longueurCarre){
         super(nomVariable);
-        //this.topLeft = topLeftPosition.clone();
-        this.setLongueur(longueurCarre);
+        try {
+			 this.topLeft = topLeftPosition.clone();
+             this.setLongueur(longueurCarre);
+		} catch (Exception e) {
+			
+		}
+       
     }
 
     //Afficher le carre
@@ -43,6 +43,7 @@ public class Carre extends Forme{
             throw new Exception();
         }
     }
+    
 	//Deplacer un carre
 	public void deplace(int x, int y) {
 		topLeft.deplace(x, y);
