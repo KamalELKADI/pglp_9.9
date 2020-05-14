@@ -61,6 +61,14 @@ public class Point {
             throw e;
         }
     }
+
+ 
+   
+   
+    //Copie de la position
+    public Point clone() {
+        return new Point(x, y);
+    }
     
     
 }
