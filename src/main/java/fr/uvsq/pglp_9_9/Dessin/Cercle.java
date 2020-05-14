@@ -5,10 +5,15 @@ public class Cercle extends Forme{
 	private Point centre;
 	private int rayon;
 	
-	public Cercle(String nomVar) {
-		super(nomVar);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	public Cercle(String nomVar,Point p,
+            final int rayonCercle) throws Exception {
+		
+        super(nomVar);
+        //centre = p.clone();
+        this.setRayon(rayonCercle);
+    }
 
 	
 	public void deplace(int x, int y) {

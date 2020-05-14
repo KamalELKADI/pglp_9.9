@@ -14,6 +14,12 @@ public class Carre extends Forme{
        
         this.setLongueur(longueurCarre);
     }
+    
+    public Carre(String nomVariable, Point topLeftPosition,int longueurCarre) throws Exception {
+        super(nomVariable);
+        //this.topLeft = topLeftPosition.clone();
+        this.setLongueur(longueurCarre);
+    }
 
     //Afficher le carre
     public void affiche() {
