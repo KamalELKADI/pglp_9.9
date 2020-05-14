@@ -2,21 +2,12 @@ package fr.uvsq.pglp_9_9.Dessin;
 
 public class Carre extends Forme{
 
-	/**
-     * position du coin en haut à gauche du carré.
-     */
+	//position du coin en haut à gauche du carré
     private Point topLeft;
-    /**
-     * longueur des côtés du carré.
-     */
+   
+    //longeur des cotes du Carre
     private int longueur;
-    /**
-     * constructeur d'un carré avec position du coin en haut à gauche.
-     * @param nomVariable nom de variable pour créer le carré
-     * @param topLeftPosition position du coin en haut à gauche du carré
-     * @param longueurCarre longueur du carré > 0
-     * @throws Exception longueur invalide
-     */
+   
     public Carre(final String nomVar,
             final int longueurCarre) throws Exception {
         super(nomVar);
