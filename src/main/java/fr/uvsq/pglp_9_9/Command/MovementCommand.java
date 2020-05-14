@@ -38,7 +38,7 @@ public class MovementCommand implements Command{
             dao.update((Triangle) forme);
         } else {
             Dao<FormeGroupe> dao = factory.CreateGroupeDao();
-            dao.update((GroupeForme) forme);
+            dao.update((FormeGroupe) forme);
         }
         factory.close();
 		

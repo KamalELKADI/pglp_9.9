@@ -6,7 +6,7 @@ import fr.uvsq.pglp_9_9.Dessin.FormeGroupe;
 import fr.uvsq.pglp_9_9.Dessin.Rectangle;
 import fr.uvsq.pglp_9_9.Dessin.Triangle;
 
-public abstract class  AbstractFactoryDao<T> {
+public abstract class  AbstractFactoryDao {
 	
 	
 	public abstract Dao<Carre> CreateCarreDAO();
