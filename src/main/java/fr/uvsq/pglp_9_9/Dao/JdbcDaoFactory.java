@@ -6,7 +6,7 @@ import fr.uvsq.pglp_9_9.Dessin.FormeGroupe;
 import fr.uvsq.pglp_9_9.Dessin.Rectangle;
 import fr.uvsq.pglp_9_9.Dessin.Triangle;
 
-public class JdbcDaoFactory extends AbstractFactoryDao<T>{
+public class JdbcDaoFactory extends AbstractFactoryDao{
 
 	@Override
 	public Dao<Carre> CreateCarreDAO() {
