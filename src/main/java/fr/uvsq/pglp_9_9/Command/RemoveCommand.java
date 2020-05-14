@@ -15,7 +15,7 @@ public class RemoveCommand implements Command{
 
 	 private ArrayList<Forme> list;
 	  
-	    public RemoveCommand(final ArrayList<Forme> f) {
+	    public RemoveCommand(ArrayList<Forme> f) {
 	        list = f;
 	    }
 	    

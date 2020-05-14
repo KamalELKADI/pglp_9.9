@@ -8,8 +8,8 @@ public class Carre extends Forme{
     //longeur des cotes du Carre
     private int longueur;
    
-    public Carre(final String nomVar,
-            final int longueurCarre) throws Exception {
+    public Carre(String nomVar,
+            int longueurCarre) throws Exception {
         super(nomVar);
        
         this.setLongueur(longueurCarre);
@@ -30,7 +30,7 @@ public class Carre extends Forme{
     }
     
     //Set longeur
-    public void setLongueur(final int longueurCarre) throws Exception {
+    public void setLongueur(int longueurCarre) throws Exception {
         if (longueurCarre > 0) {
             this.longueur = longueurCarre;
         } else {

@@ -4,17 +4,15 @@ public abstract class Forme {
 	
     private String nomVar;
     
-    
-    
-    
-    public Forme(final String nomVar) {
+        
+    public Forme(String nomVar) {
 
 		this.nomVar = nomVar;
 	}
 	public String getNomVar() {
 		return nomVar + "";
 	}
-	public void setNomVar(final String nomVar) {
+	public void setNomVar(String nomVar) {
 		this.nomVar = nomVar + "";
 	}
 

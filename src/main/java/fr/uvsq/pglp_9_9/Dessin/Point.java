@@ -15,7 +15,7 @@ public class Point {
     }
     
     
-    public Point(final int xValue, final int yValue) {
+    public Point(int xValue,int yValue) {
         x = xValue;
         y = yValue;
     }
@@ -30,7 +30,7 @@ public class Point {
         return y;
     }
     
-    public void deplace(final int xValue, final int yValue) {
+    public void deplace(int xValue,int yValue) {
         x += xValue;
         y += yValue;
     }
@@ -40,7 +40,7 @@ public class Point {
     }
     
     
-    public Point(final String position) throws CharConversionException {
+    public Point(String position) throws CharConversionException {
         position.replace(" ", "");
         if (position.charAt(0) != '('
         || position.charAt(position.length() - 1) != ')') {

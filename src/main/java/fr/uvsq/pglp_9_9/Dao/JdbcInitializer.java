@@ -42,7 +42,7 @@ public class JdbcInitializer {
         connect.close();
     }
 	
-	private static void suppTables(final Connection connect) {
+	private static void suppTables(Connection connect) {
         Statement stat = null;
         try {
             stat = connect.createStatement();
@@ -63,7 +63,7 @@ public class JdbcInitializer {
     }
 	
 	//créer la table Forme
-	private static void CreateForme(final Connection connect){
+	private static void CreateForme(Connection connect){
 		String table = "create table Forme ("
                 + "variableName varchar(30) primary key"
                 + ")";
@@ -78,7 +78,7 @@ public class JdbcInitializer {
     }
     
 	//créer la table Triangle
-    private static void CreateTriangle(final Connection connect){
+    private static void CreateTriangle(Connection connect){
     	String table = "create table Triangle ("
                 + "variableName varchar(30) primary key,"
                 + "point1_x int,"
@@ -99,7 +99,7 @@ public class JdbcInitializer {
     }
     
     //créer la table Carré.
-    private static void CreateCarre(final Connection connect){
+    private static void CreateCarre(Connection connect){
     	 String table = "create table Carre ("
                  + "variableName varchar(30) primary key,"
                  + "topLeft_x int,"
@@ -119,7 +119,7 @@ public class JdbcInitializer {
     }
     
     //créer la table Rectangle.
-    private static void CreateRectangle(final Connection connect)
+    private static void CreateRectangle(Connection connect)
             throws SQLException {
         String table = "create table Rectangle ("
                 + "variableName varchar(30) primary key,"
@@ -140,7 +140,7 @@ public class JdbcInitializer {
     
     
     //créer la table Cercle.
-    private static void CreateCercle(final Connection connect){
+    private static void CreateCercle(Connection connect){
         String table = "create table Cercle ("
                 + "variableName varchar(30) primary key,"
                 + "centre_x int,"
@@ -159,7 +159,7 @@ public class JdbcInitializer {
     
     
     //créer la table GroupeForme.
-    private static void CreateGroupeForme(final Connection connect){
+    private static void CreateGroupeForme(Connection connect){
         String table = "create table GroupeForme ("
                 + "variableName varchar(30) primary key,"
                 + "foreign key (variableName) references Forme (variableName)"
