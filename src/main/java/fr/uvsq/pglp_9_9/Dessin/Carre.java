@@ -49,5 +49,10 @@ public class Carre extends Forme{
 		topLeft.deplace(x, y);
 		
 	}
+	
+	// Obtenir la position du coin en haut à gauche du carré.
+	public Point getTopLeft() {
+        return topLeft.clone();
+    }
 
 }

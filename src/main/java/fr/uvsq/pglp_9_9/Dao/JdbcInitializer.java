@@ -11,7 +11,7 @@ public class JdbcInitializer {
 	private static final String userName = "Kamal";
 	private static final String password = "root";
 	
-	public static String dburl = "jdbc:derby:dessin;create=false";
+	public static String dburl = "jdbc:derby:dessin;create=true";
 	
 	public JdbcInitializer() {
 		Properties connectionProps = new Properties(); // Inutilisé
