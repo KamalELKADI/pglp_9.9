@@ -26,18 +26,23 @@ public class RemoveCommand implements Command{
 	            if (forme.getClass() == Cercle.class) {
 	                Dao<Cercle> dao = factory.CreateCercleDao();
 	                dao.delete((Cercle) forme);
+	                System.out.println("La forme " + forme.getNomVar() + " a été supprimer avec succès.");
 	            } else if (forme.getClass() == Carre.class) {
 	                Dao<Carre> dao = factory.CreateCarreDAO();
 	                dao.delete((Carre) forme);
+	                System.out.println("La forme " + forme.getNomVar() + " a été supprimer avec succès.");
 	            } else if (forme.getClass() == Rectangle.class) {
 	                Dao<Rectangle> dao = factory.CreateRectangleDao();
 	                dao.delete((Rectangle) forme);
+	                System.out.println("La forme " + forme.getNomVar() + " a été supprimer avec succès.");
 	            } else if (forme.getClass() == Triangle.class) {
 	                Dao<Triangle> dao = factory.CreateTriangleDAO();
 	                dao.delete((Triangle) forme);
+	                System.out.println("La forme " + forme.getNomVar() + " a été supprimer avec succès.");
 	            } else {
 	                Dao<FormeGroupe> dao = factory.CreateGroupeDao();
 	                dao.delete((FormeGroupe) forme);
+	                System.out.println("La forme " + forme.getNomVar() + " a été supprimer avec succès.");
 	            }
 	        }
 	        factory.close();

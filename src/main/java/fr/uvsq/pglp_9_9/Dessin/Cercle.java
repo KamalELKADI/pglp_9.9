@@ -11,10 +11,10 @@ public class Cercle extends Forme{
 		
         super(nomVar);
         try {
-			 centre = p.clone();
-        this.setRayon(rayonCercle);
+		    centre = p.clone();
+	        setRayon(rayonCercle);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Erreur : " + e.getMessage());
 		}
        
     }

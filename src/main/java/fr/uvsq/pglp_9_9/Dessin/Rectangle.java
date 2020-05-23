@@ -8,12 +8,20 @@ public class Rectangle extends Forme{
 	
 	
 	 public Rectangle(String nomVar, Point topLeftPosition,int longueurRectangle, int largeurRectangle)
-	            throws Exception {
-	        super(nomVar);
-	        this.topLeft = topLeftPosition.clone();
-	        this.setLargeur(largeurRectangle);
-	        this.setLongueur(longueurRectangle);
+	   {
+		 super(nomVar);
+		 try {
+			topLeft = topLeftPosition.clone();
+	        setLargeur(largeurRectangle);
+	        setLongueur(longueurRectangle);
+		} catch (Exception e) {
+			System.out.println("Erreur : " + e.getMessage());
+		}
+	        
+	        
 	    }
+	 
+	 
 	
 
 	@Override
@@ -26,7 +34,7 @@ public class Rectangle extends Forme{
         super.affiche();
         System.out.println("Rectangle (longueur = "
                 + longueur + ", largeur = " + largeur
-                + ", position du coin en haut à gauche = " + topLeft + ")");
+                + ", position en haut à gauche = " + topLeft + ")");
     }
 
 	public Point getTopLeft() {

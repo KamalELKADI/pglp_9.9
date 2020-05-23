@@ -14,7 +14,7 @@ public class JdbcDaoFactory extends AbstractFactoryDao{
 	private Connection connect;
     
     public JdbcDaoFactory() {
-        connect = JdbcInitializer.getConnection();
+        connect = JdbcInitializer.Connection();
     }
 	
 	public void close() {

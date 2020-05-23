@@ -8,17 +8,16 @@ public class Triangle extends Forme{
 	    //constructeur
 	    public Triangle(String nomVar, Point point1, Point point2, Point point3) {
 	        super(nomVar);
-	        int trois = 3;
-	        points = new Point[trois];
+	        points = new Point[3];
 	        points[0] = point1.clone();
 	        points[1] = point2.clone();
 	        points[2] = point3.clone();
 	    }
 	    
 	    // deplacer les 3 points du triangle
-	    public void deplace(final int x, final int y) {
-	        final int trois = 3;
-	        for (int i = 0; i < trois; i++) {
+	    public void deplace(int x, int y) {
+
+	        for (int i = 0; i < 3; i++) {
 	            points[i].deplace(x, y);
 	        }
 	    }
@@ -34,7 +33,7 @@ public class Triangle extends Forme{
 	    
 	    
 	    //getPoint du triangle
-	    public Point getPosition(final int index) {
+	    public Point getPosition(int index) {
 	        if (index < 0 || index > 2) {
 	            throw new IndexOutOfBoundsException();
 	        } else {

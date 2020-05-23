@@ -42,7 +42,7 @@
 		<configuration>
 			<archive>
 				<manifest>
-					<mainClass>fr.uvsq.pglp_9_9.App</mainClass>
+					<mainClass>fr.uvsq.pglp_9_9.DrawingAPP</mainClass>
 				</manifest>
 			</archive>
 		</configuration>
@@ -110,6 +110,11 @@
 		      <groupId>org.apache.derby</groupId>
 		      <artifactId>derby</artifactId>
 		      <version>10.14.2.0</version>
-		   </dependency>
+		    </dependency>
+		    <dependency>
+		      <groupId>org.springframework</groupId>
+		      <artifactId>spring-jdbc</artifactId>
+		      <version>5.2.5.RELEASE</version>
+		    </dependency>
 	</dependencies>
 </project>

@@ -20,6 +20,7 @@ public class MovementCommand implements Command{
         this.vecteur = vecteurDeplacement;
         forme = f;
     }
+    
 	@Override
 	public void execute() {
 		forme.deplace(vecteur.getX(), vecteur.getY());
@@ -27,20 +28,26 @@ public class MovementCommand implements Command{
         if (forme.getClass() == Cercle.class) {
             Dao<Cercle> dao = factory.CreateCercleDao();
             dao.update((Cercle) forme);
+            
         } else if (forme.getClass() == Carre.class) {
             Dao<Carre> dao = factory.CreateCarreDAO();
             dao.update((Carre) forme);
+            System.out.println("La forme " + forme.getNomVar() + " a été déplacer avec succès.");
         } else if (forme.getClass() == Rectangle.class) {
             Dao<Rectangle> dao = factory.CreateRectangleDao();
             dao.update((Rectangle) forme);
+            System.out.println("La forme " + forme.getNomVar() + " a été déplacer avec succès.");
         } else if (forme.getClass() == Triangle.class) {
             Dao<Triangle> dao = factory.CreateTriangleDAO();
             dao.update((Triangle) forme);
+            System.out.println("La forme " + forme.getNomVar() + " a été déplacer avec succès.");
         } else {
             Dao<FormeGroupe> dao = factory.CreateGroupeDao();
             dao.update((FormeGroupe) forme);
+            System.out.println("La forme " + forme.getNomVar() + " a été déplacer avec succès.");
         }
         factory.close();
+       
 		
 	}
 

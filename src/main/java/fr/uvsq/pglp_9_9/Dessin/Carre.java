@@ -13,10 +13,10 @@ public class Carre extends Forme{
     public Carre(String nomVariable, Point topLeftPosition,int longueurCarre){
         super(nomVariable);
         try {
-			 this.topLeft = topLeftPosition.clone();
-             this.setLongueur(longueurCarre);
+			 topLeft = topLeftPosition.clone();
+             setLongueur(longueurCarre);
 		} catch (Exception e) {
-			
+			System.out.println("Erreur : " + e.getMessage());
 		}
        
     }
@@ -26,7 +26,7 @@ public class Carre extends Forme{
         super.affiche();
         System.out.println("Carre (longueur = "
                 + longueur
-                + ", position du coin en haut à gauche = " + topLeft + ")");
+                + ", position en haut à gauche = " + topLeft + ")");
     }
    
     
@@ -38,7 +38,7 @@ public class Carre extends Forme{
     //Set longeur
     public void setLongueur(int longueurCarre) throws Exception {
         if (longueurCarre > 0) {
-            this.longueur = longueurCarre;
+            longueur = longueurCarre;
         } else {
             throw new Exception();
         }

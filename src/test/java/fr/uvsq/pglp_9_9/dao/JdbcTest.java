@@ -84,8 +84,7 @@ public class JdbcTest {
 		                + ")";
 			 statement.execute(sql);
 			 statement.close();
-			  
-			
+		
 		      
 		     
 		    } catch (SQLException e) {
@@ -94,10 +93,7 @@ public class JdbcTest {
 		    }
 		 
 	}
-	
-	
-	
-	
+
 	@Test
 	public void works() {
 		setUp();
