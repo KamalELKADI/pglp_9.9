@@ -292,16 +292,18 @@ public class DrawingTUI {
             		+ " |                                                                                                                 |\n"
                     + " |Pour Avoir de l'aide tapez << help >>                                                                            |\n"
                     + " |Pour sauvegarder le dessin << save >>                                                                            |\n"                                      
-                    + " |Pour sortir de l'application tapez << exit >>                                                                    |\n"
+                    + " |Pour sortir de l'application sans sauvegarder dans la BD tapez << exit >>                                        |\n"
         	        + " |-----------------------------------------------------------------------------------------------------------------|\n");
         }else if (cmd.contains("delete")) {
             return remove(cmd);
+        }else if (cmd.contains("exit")) {
+        	System.exit(0);
         }
         return null;
     }
     
     
-    private boolean InclusDansUnGroupe(Forme f) {
+    private boolean IsInGroupe(Forme f) {
         Connection connect = JdbcInitializer.Connection();
         try {
             PreparedStatement prepare = connect.prepareStatement(
@@ -323,7 +325,7 @@ public class DrawingTUI {
     }
     
     //afficher les formes du dessin
-    public void afficheDessin() {
+    public void ShowDessin() {
         JdbcDaoFactory factory = new JdbcDaoFactory();
         Dao<Cercle> daoCercle = factory.CreateCercleDao();
         Dao<Carre> daoCarre = factory.CreateCarreDAO();
@@ -337,7 +339,7 @@ public class DrawingTUI {
         formes.addAll(daoTriangle.findAll());
         formes.addAll(daoGroupe.findAll());
         for (Forme f : formes) {
-            if (!this.InclusDansUnGroupe(f)) {
+            if (!IsInGroupe(f)) {
                 f.affiche();
             }
         }

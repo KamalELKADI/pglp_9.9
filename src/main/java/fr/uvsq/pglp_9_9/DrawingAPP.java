@@ -37,16 +37,16 @@ public class DrawingAPP {
         		+ " |                                                                                                                 |\n"
                 + " |Pour Avoir de l'aide tapez << help >>                                                                            |\n"
                 + " |Pour sauvegarder le dessin << save >>                                                                            |\n"                                      
-                + " |Pour sortir de l'application tapez << exit >>                                                                    |\n"
+                + " |Pour sortir de l'application sans sauvegarder dans la BD tapez << exit >>                                        |\n"
     	        + " |-----------------------------------------------------------------------------------------------------------------|\n");
         String cmd = saisie.nextLine();
         Command c;
-        while (!cmd.equalsIgnoreCase("exit")) {
+        while (!cmd.equalsIgnoreCase("save")) {
             c = dtui.nextCommand(cmd);
             if (c != null) {
                 c.execute();
             }
-            dtui.afficheDessin();
+            dtui.ShowDessin();
             cmd = saisie.nextLine();
         }
     }
@@ -54,11 +54,12 @@ public class DrawingAPP {
     
     @SuppressWarnings("resource")
     public static String selectNameDessin() throws Exception {
-        System.out.println("Entrer 'M' pour modifier l'ancien dessin ou bien sur 'N' pour un nouveau dessin => M/N ");
+        System.out.println("Pour Modifier l'ancien Dessin entrer => 'M ou m' \n"
+        		+ "Pour créer un Nouveau Dessin entrer => 'N ou n'");
         Scanner s = new Scanner(System.in);
         String name = "";
         while (!name.equalsIgnoreCase("m") && !name.equalsIgnoreCase("n")
-                && !name.equalsIgnoreCase("exit")) {
+                && !name.equalsIgnoreCase("save")) {
             name = s.nextLine();
         }
         if (name.equalsIgnoreCase("m")) {
@@ -72,47 +73,14 @@ public class DrawingAPP {
             }
             return name;
         }
-        return "test";
+        return "dessin";
     }
     
     
-    public static void enregistre(final String name) {
-        Scanner s = new Scanner(System.in);
-        if (!name.equals("test")) {
-            System.out.println("1. Enregistrer vers \"" + name + "\"");
-            System.out.println("2. Enregistrer sous ...");
-            String reponse  = "";
-            while (!reponse.equals("1") && !reponse.equals("2")
-                    && !reponse.equalsIgnoreCase("exit")) {
-                s = new Scanner(System.in);
-            }
-            if (reponse.equals("1") || reponse.equalsIgnoreCase("exit")) {
-                s.close();
-                return;
-            }
-        }
-        System.out.println("entrez un nom pour sauvegarder votre dessin :");
-        String reponse  = "test";
-        while (reponse.equals("test") && new File(reponse).exists()) {
-            reponse = s.nextLine();
-        }
-        if (reponse.equalsIgnoreCase("exit")) {
-            s.close();
-            return;
-        } else {
-            File f = new File(name);
-            if (!f.exists()) {
-                f.renameTo(new File(reponse));
-            }
-        }
-        s.close();
-    }
-    
-    
-    public static void main(final String[] args) throws Exception {
+    public static void main(final String[] args){
         try {
             String name = selectNameDessin();
-            if (name.equals("test")) {
+            if (name.equals("dessin")) {
                 JdbcInitializer.createDataBase();
                 JdbcInitializer.init();
             } else {
@@ -120,7 +88,32 @@ public class DrawingAPP {
             }
             DrawingAPP app = new DrawingAPP();
             app.run();
-            enregistre(name);
+            Scanner s = new Scanner(System.in);
+            if (!name.equals("dessin")) {
+                String reponse  = "";
+                while (!reponse.equalsIgnoreCase("save")) {
+                    s = new Scanner(System.in);
+                }
+                if (reponse.equalsIgnoreCase("save")) {
+                    s.close();
+                    return;
+                }
+            }
+            System.out.println("Entrez un nom pour sauvegarder votre dessin :");
+            String reponse  = "dessin";
+            while (reponse.equals("dessin") && new File(reponse).exists()) {
+                reponse = s.nextLine();
+            }
+            if (reponse.equalsIgnoreCase("save")) {
+                s.close();
+                return;
+            } else {
+                File f = new File(name);
+                if (!f.exists()) {
+                    f.renameTo(new File(reponse));
+                }
+            }
+            s.close();
         } catch (Exception e) {
             e.getMessage();
         }
